@@ -1,9 +1,7 @@
-import {DIRECTIVES} from './directives';
-import {PROVIDERS} from './services';
-import {PIPES} from './pipes';
+import {Keepalive} from './keepalive';
 
-export * from './directives';
-export * from './services';
-export * from './pipes';
+export * from './keepalive';
 
-export default {directives: [DIRECTIVES], pipes: [PIPES], providers: [PROVIDERS]}
+export const KEEPALIVE_PROVIDERS: any[] = [Keepalive];
+
+export default {directives: [KEEPALIVE_PROVIDERS]}
