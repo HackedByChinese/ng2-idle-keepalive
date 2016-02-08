@@ -14,7 +14,8 @@ gulp.task('karma:start', function(done) {
 gulp.task('karma:start:watch', function(done) {
   new Server({
     configFile: config.PATHS.root + '/karma.conf.js',
-    singleRun: false
+    singleRun: false,
+    browsers: ['Chrome']
   }, function() {
     done();
   }).start();
