@@ -1,4 +1,6 @@
 # Introduction
+
+[![Join the chat at https://gitter.im/HackedByChinese/ng2-keepalive](https://badges.gitter.im/HackedByChinese/ng2-keepalive.svg)](https://gitter.im/HackedByChinese/ng2-keepalive?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Build Status](https://travis-ci.org/HackedByChinese/ng2-keepalive.svg?branch=master)](https://travis-ci.org/HackedByChinese/ng2-keepalive)
 
 An Angular2 module for pinging a server
