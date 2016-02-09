@@ -58,7 +58,7 @@ You can use `clang-format` to automatically correct most style errors and then c
 
 ## Contributing
 
-See the [contributing guide]().
+See the [contributing guide](https://github.com/HackedByChinese/ng2-keepalive/blob/master/CONTRIBUTING.md).
 
 ## License
 
