@@ -17,7 +17,7 @@ I ask that you do not use GitHub Issues to ask questions. Instead, please use [G
 
 ## <a name="issues"></a> Reporting Issues
 
-If you find a bug in the source code, an issue with an implementation, or a mistake in the documentation, you can help by submitting an issue in [GitHub Issues][githubissues] for this [repository](https://github.com/Semantic-Org/Semantic-UI-Angular/issues).
+If you find a bug in the source code, an issue with an implementation, or a mistake in the documentation, you can help by submitting an issue in [GitHub Issues][githubissues] for this [repository][github].
 
 ### <a name="submitting"></a> Submitting an Issue
 
