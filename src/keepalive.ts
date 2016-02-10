@@ -95,4 +95,10 @@ export class Keepalive implements OnDestroy {
    * Performs any cleanup tasks when Angular destroys the instance.
    */
   ngOnDestroy(): void { this.stop(); }
+
+  /*
+   * Returns whether or not the service will ping automatically at the specified interval.
+   * @return True if the service will ping at the specified interval; otherwise, false.
+   */
+  isRunning(): boolean { return !!this.pingHandle; }
 }

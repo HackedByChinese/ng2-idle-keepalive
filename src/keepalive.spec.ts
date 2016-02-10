@@ -195,6 +195,14 @@ export function main() {
 
            expect(instance.stop).toHaveBeenCalled();
          }));
+
+      it('isRunning() should return true after start() and false after stop()', () => {
+        expect(instance.isRunning()).toBe(false);
+        instance.start();
+        expect(instance.isRunning()).toBe(true);
+        instance.stop();
+        expect(instance.isRunning()).toBe(false);
+      });
     });
   });
 }
