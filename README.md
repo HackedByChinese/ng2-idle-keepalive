@@ -137,8 +137,6 @@ import {Component} from 'angular2/core';
 import {CORE_DIRECTIVES} from 'angular2/common';
 import {Keepalive} from 'ng2-keepalive/core';
 
-import {NameList} from '../../shared/services/name_list';
-
 @Component({
   selector: 'about',
   templateUrl: './about/components/about.html',
