@@ -5,7 +5,7 @@ module.exports.pkg = require(path.join(__dirname, '../../package.json'));
 
 module.exports.PATHS = {
   root: path.join(__dirname, '../../'),
-  releaseAssets: ['package.json', 'LICENSE'],
+  releaseAssets: ['package.json', 'LICENSE', 'README.md', 'CHANGELOG.md'],
   src: {
     base: 'src',
     ts: ['src/**/*.ts', '!src/**/*.spec.ts'],
