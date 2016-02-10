@@ -7,6 +7,12 @@ An Angular2 module for pinging a server
 
 This module is used to ping a server in the background. It is primarily intended to be used as an optional component in `ng2-idle`.
 
+## License
+
+Authored by **Mike Grabski** @HackedByChinese me@mikegrabski.com
+
+Licensed under MIT
+
 ## Design Considerations
 
 The primary application of this module is for session management. Commonly, an authn/authz strategy will involve the application requesting a token (an OAuth bearer token, Forms Auth ticket, or other token system, which could be in cookie form, supplied as a header, etc.). Also common is a strategy that invalidates that token after some period of inactivity.
@@ -223,9 +229,3 @@ You can use `clang-format` to automatically correct most style errors and then c
 ## Contributing
 
 See the [contributing guide](https://github.com/HackedByChinese/ng2-keepalive/blob/master/CONTRIBUTING.md).
-
-## License
-
-Authored by **Mike Grabski** @HackedByChinese me@mikegrabski.com
-
-Licensed under MIT
