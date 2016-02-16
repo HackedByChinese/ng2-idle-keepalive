@@ -1,3 +1,13 @@
+<a name="1.0.0-alpha.3"></a>
+# [1.0.0-alpha.3](https://github.com/HackedByChinese/ng2-idle-keepalive/compare/1.0.0-alpha.2...v1.0.0-alpha.3) (2016-02-16)
+
+
+### Bug Fixes
+
+* **Core:** use existing instance of Keepalive when registering KeepaliveSvc ([a7e75da](https://github.com/HackedByChinese/ng2-idle-keepalive/commit/a7e75da))
+
+
+
 <a name="1.0.0-alpha.2"></a>
 # [1.0.0-alpha.2](https://github.com/HackedByChinese/ng2-idle-keepalive/compare/1.0.0-alpha.1...v1.0.0-alpha.2) (2016-02-16)
 
