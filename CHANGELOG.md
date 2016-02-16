@@ -1,3 +1,22 @@
+<a name="1.0.0-alpha.1"></a>
+# [1.0.0-alpha.1](https://github.com/HackedByChinese/ng2-idle-keepalive/compare/0.1.0...v1.0.0-alpha.1) (2016-02-16)
+
+
+### Bug Fixes
+
+* **Core:** fix export of providers to providers not directives ([367f9c2](https://github.com/HackedByChinese/ng2-idle-keepalive/commit/367f9c2))
+
+### Features
+
+* **Keepalive:** implements ng2-idle KeepaliveSvc ([6a35435](https://github.com/HackedByChinese/ng2-idle-keepalive/commit/6a35435))
+
+
+### BREAKING CHANGES
+
+* Keepalive: The package now requires ng2-idle 1.0.0-alpha.3 or later.
+
+
+
 <a name="0.1.0"></a>
 # 0.1.0 (2016-02-10)
 
