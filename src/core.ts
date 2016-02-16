@@ -6,4 +6,4 @@ export * from './keepalive';
 
 export const KEEPALIVE_PROVIDERS: any[] = [Keepalive, provide(KeepaliveSvc, {useClass: Keepalive})];
 
-export default {directives: [KEEPALIVE_PROVIDERS]}
+export default {providers: [KEEPALIVE_PROVIDERS]}
