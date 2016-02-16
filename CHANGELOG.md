@@ -1,3 +1,8 @@
+<a name="1.0.0-alpha.2"></a>
+# [1.0.0-alpha.2](https://github.com/HackedByChinese/ng2-idle-keepalive/compare/1.0.0-alpha.1...v1.0.0-alpha.2) (2016-02-16)
+
+
+
 <a name="1.0.0-alpha.1"></a>
 # [1.0.0-alpha.1](https://github.com/HackedByChinese/ng2-idle-keepalive/compare/0.1.0...v1.0.0-alpha.1) (2016-02-16)
 
