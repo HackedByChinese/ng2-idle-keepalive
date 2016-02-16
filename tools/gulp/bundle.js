@@ -8,7 +8,8 @@ var bundleConfig = {
   defaultJSExtensions: true,
   paths: {
     'angular2/*': './node_modules/angular2/*',
-    'rxjs/*': './node_modules/rxjs/*'
+    'rxjs/*': './node_modules/rxjs/*',
+    'ng2-idle/*': './node_modules/ng2-idle/*'
   }
 };
 
@@ -24,7 +25,7 @@ function bundle(moduleName, moduleBundleName, minify, done) {
   const outputFile = path.join(config.PATHS.dist.bundles,
       moduleBundleName + (minify ? '.min' : '') + '.js');
   const bundlePromise = builder.bundle(moduleName +
-      ' - angular2/* - rxjs/*', outputFile, outputConfig)
+      ' - angular2/* - rxjs/* - ng2-idle/*', outputFile, outputConfig)
       .then(function() {
         done();
       });

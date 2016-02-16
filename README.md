@@ -83,6 +83,7 @@ import {KEEPALIVE_PROVIDERS} from 'ng2-idle-keepalive/core'; // You'll also need
 import {AppCmp} from './app/components/app'; // include your root application component
 
 bootstrap(AppCmp, [
+  // Keepalive depends on Http
   HTTP_PROVIDERS,
   // will register keepalive as the implementation Idle will use
   KEEPALIVE_PROVIDERS,

@@ -1,11 +1,12 @@
 import {Injectable, EventEmitter, OnDestroy} from 'angular2/core';
 import {Http, Request, RequestMethod, Response} from 'angular2/http';
+import {KeepaliveSvc} from 'ng2-idle/core';
 
 /**
  * An example of an injectable service.
  */
 @Injectable()
-export class Keepalive implements OnDestroy {
+export class Keepalive extends KeepaliveSvc implements OnDestroy {
   private pingRequest: Request;
   private pingInterval: number = 10 * 60;
   private pingHandle: any;
@@ -24,7 +25,7 @@ export class Keepalive implements OnDestroy {
    * Initializes a new instance of Keepalive
    * @param http - The HTTP service.
    */
-  constructor(private http: Http) {}
+  constructor(private http: Http) { super(); }
 
   /*
    * Sets the string or Request that should be used when pinging.
