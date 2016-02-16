@@ -1,7 +1,7 @@
 {
-  "name": "ng2-keepalive",
-  "version": "0.1.0",
-  "description": "An Angular2 module for pinging a server",
+  "name": "ng2-idle-keepalive",
+  "version": "1.0.0-alpha.1",
+  "description": "A plugin for ng2-idle to keep user sessions alive while active.",
   "main": "index.js",
   "scripts": {
     "postinstall": "typings install",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HackedByChinese/ng2-keepalive.git"
+    "url": "git+https://github.com/HackedByChinese/ng2-idle-keepalive.git"
   },
   "keywords": [
     "angular2",
@@ -22,9 +22,9 @@
   "author": "Mike Grabski <me@mikegrabski.com> (http://mikegrabski.com/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/HackedByChinese/ng2-keepalive/issues"
+    "url": "https://github.com/HackedByChinese/ng2-idle-keepalive/issues"
   },
-  "homepage": "https://github.com/HackedByChinese/ng2-keepalive#readme",
+  "homepage": "https://github.com/HackedByChinese/ng2-idle-keepalive#readme",
   "devDependencies": {
     "cz-conventional-changelog": "^1.1.5",
     "del": "^2.2.0",

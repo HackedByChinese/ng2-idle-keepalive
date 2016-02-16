@@ -1,11 +1,11 @@
 # Introduction
 
-[![Join the chat at https://gitter.im/HackedByChinese/ng2-keepalive](https://badges.gitter.im/HackedByChinese/ng2-keepalive.svg)](https://gitter.im/HackedByChinese/ng2-keepalive?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![Build Status](https://travis-ci.org/HackedByChinese/ng2-keepalive.svg?branch=master)](https://travis-ci.org/HackedByChinese/ng2-keepalive)
+[![Join the chat at https://gitter.im/HackedByChinese/ng2-idle-keepalive](https://badges.gitter.im/HackedByChinese/ng2-idle-keepalive.svg)](https://gitter.im/HackedByChinese/ng2-idle-keepalive?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Build Status](https://travis-ci.org/HackedByChinese/ng2-idle-keepalive.svg?branch=master)](https://travis-ci.org/HackedByChinese/ng2-idle-keepalive)
 
-An Angular2 module for pinging a server
+A plugin for ng2-idle to keep user sessions alive while active.
 
-This module is used to ping a server in the background. It is primarily intended to be used as an optional component in `ng2-idle`.
+This module is used to ping a server in the background. It is an optional plugin for `ng2-idle`.
 
 ## License
 
@@ -19,9 +19,9 @@ The primary application of this module is for session management. Commonly, an a
 
 This approach requires the client to interact with the server at regular intervals while their session is active to keep it active on the server side. This module provides a way for your application to regularly check on the user's session status, either to keep it alive or to respond to the user's session being ended by the server, whatever your particular workflow is.
 
-This module is most effective when used in conjunction with `ng2-idle`, which can detect user activity (such as typing, touching, and scrolling) during long periods of active use that doesn't trigger any interaction with the server.
+This module is used in conjunction with `ng2-idle`, which can detect user activity (such as typing, touching, and scrolling) during long periods of active use that doesn't trigger any interaction with the server.
 
-For example, if a user logs into an email application, the server may choose to reject session tokens after 5 minutes of inactivity to increase security. However, the user may take much more time than that to type out their email and send it. It would be frustrating to find you are logged out when you were actively using the software! `ng2-keepalive` could be running in the background pinging the server every 5 minutes while they write that email, and then stop when they are inactive.
+For example, if a user logs into an email application, the server may choose to reject session tokens after 5 minutes of inactivity to increase security. However, the user may take much more time than that to type out their email and send it. It would be frustrating to find you are logged out when you were actively using the software! `ng2-idle-keepalive` could be running in the background pinging the server every 5 minutes while they write that email, and then stop when they are inactive.
 
 ## Features
 
@@ -29,14 +29,15 @@ For example, if a user logs into an email application, the server may choose to 
 * Pinging can be done manually or at a configurable interval.
 * Emits `onPing` event for other handling of pinging (if the built-in HTTP request approach won't suffice).
 * Emits `onPingResponse` event containing the configured HTTP request's response (so you can update your cached token or whatever else from the response).
+* Can be used as the Keepalive implmentation used in `ng2-idle`'s `Idle` service.
 
 ## Getting Started
 
 **NOTE ON ANGULAR**: This module is was written against Angular version `2.0.0-beta.3`. You may run into difficulties installing and running this module with prior versions.
 
-Install and save `ng2-keepalive` as a dependency of your project.
+Install and save `ng2-idle` and `ng2-idle-keepalive` as a dependency of your project.
 
-     npm install ng2-keepalive
+     npm install ng2-idle ng2-idle-keepalive
 
 Now you may configure `Keepalive` as a provider in your app's root `bootstrap` routine, which will make the service instance available across your entire application, include as a local dependency to a route, or make it a local dependency to a component or directive.
 
@@ -76,13 +77,17 @@ In `src/main.ts`, we bootstrap the application. It might look something like thi
 import {provide} from 'angular2/core';
 import {bootstrap} from 'angular2/platform/browser';
 import {HTTP_PROVIDERS} from 'angular2/http'; // You'll need to import HTTP providers
-import {KEEPALIVE_PROVIDERS} from 'ng2-keepalive/core'; // You'll also need to import Keepalive providers
+import {IDLE_PROVIDERS} from 'ng2-idle/core'; // Import idle providers
+import {KEEPALIVE_PROVIDERS} from 'ng2-idle-keepalive/core'; // You'll also need to import Keepalive providers
 
 import {AppCmp} from './app/components/app'; // include your root application component
 
 bootstrap(AppCmp, [
   HTTP_PROVIDERS,
-  KEEPALIVE_PROVIDERS
+  // will register keepalive as the implementation Idle will use
+  KEEPALIVE_PROVIDERS,
+  // registers Idle
+  IDLE_PROVIDERS
   // any additional providers your application needs
 ]);
 ```
@@ -96,7 +101,8 @@ import {
   ROUTER_DIRECTIVES
 } from 'angular2/router';
 
-import {Keepalive} from 'ng2-keepalive/core';
+import {Idle, DEFAULT_INTERRUPTSOURCES} from 'ng2-idle/core';
+import {Keepalive} from 'ng2-idle-keepalive/core';
 
 import {HomeCmp} from '../../home/components/home';
 import {AboutCmp} from '../../about/components/about';
@@ -115,12 +121,18 @@ import {AboutCmp} from '../../about/components/about';
 export class AppCmp {
 
   // when this component is loaded, keepalive will be injected, configured, and start pinging right away
-  constructor(private keepalive: Keepalive) {
+  constructor(private idle: Idle, private keepalive: Keepalive) {
     keepalive.onPing.subscribe(() => {
       console.log('Keepalive.ping() called!');
     });
     keepalive.interval(5);
-    keepalive.start();
+
+    // sets an idle timeout of 5 seconds, for testing purposes.
+    idle.setIdle(5);
+    // sets a timeout period of 5 seconds. after 10 seconds of inactivity, the user will be considered timed out.
+    idle.setTimeout(5);
+    // sets the default interrupts, in this case, things like clicks, scrolls, touches to the document
+    idle.setInterrupts(DEFAULT_INTERRUPTSOURCES);
   }
 }
 ```
@@ -136,12 +148,13 @@ keepalive.onPingRequest.subscribe(response => {
   });
 ```
 
-In `src/about/components/about.ts`, we see how you can interact with the `Keepalive` instance we created, to do things like stopping and starting pinging. You'll note that our subscription to `onPing` occurs in addition to the subscription we created when we configured the service in `AppCmp` above.
+In `src/about/components/about.ts`, we see how you can interact with the `Keepalive` instance we created, to do things like stopping and starting pinging. You'll note that our subscription to `onPing` occurs in addition to the subscription we created when we configured the service in `AppCmp` above. **NOTE**: By default, when `Keepalive` is configured, it will automatically be used by `Idle` and consequently, `Idle` will automatically integrate with `Keepalive`. That means that `Idle` will assume responsibility for starting the keepalive when watching for idleness, and stopping it when the user goes idle or times out. If you are manually trying to manage `Keepalive` and feel that `Idle`'s default functionality is interferring, simply disable it using `Idle.setKeepaliveEnabled(false);`.
 
 ```
 import {Component} from 'angular2/core';
 import {CORE_DIRECTIVES} from 'angular2/common';
-import {Keepalive} from 'ng2-keepalive/core';
+import {Keepalive} from 'ng2-idle-keepalive/core';
+import {Idle} from 'ng2-idle/core';
 
 @Component({
   selector: 'about',
@@ -151,7 +164,13 @@ import {Keepalive} from 'ng2-keepalive/core';
 export class AboutCmp {
   pings: Array<string> = new Array;
 
-  constructor(private keepalive: Keepalive) {
+  constructor(idle: Idle, private keepalive: Keepalive) {
+    // NOTE: since this example uses Idle, the next line is only needed for this example,
+    // so that Idle will not start/stop keepalive automatically. In a normal project,
+    // you would not need this unless your use case requires it.
+    idle.setKeepaliveEnabled(false);
+
+    // subscribe to the onPing event
     keepalive.onPing.subscribe(() => {
       this.pings.push(new Date().toISOString());
     });
@@ -228,4 +247,4 @@ You can use `clang-format` to automatically correct most style errors and then c
 
 ## Contributing
 
-See the [contributing guide](https://github.com/HackedByChinese/ng2-keepalive/blob/master/CONTRIBUTING.md).
+See the [contributing guide](https://github.com/HackedByChinese/ng2-idle-keepalive/blob/master/CONTRIBUTING.md).

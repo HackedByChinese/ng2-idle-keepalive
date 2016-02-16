@@ -1,4 +1,4 @@
-# Contributing to ng2-keepalive
+# Contributing to ng2-idle-keepalive
 
 This guide will describe how _you_ can contribute to this module.
 
@@ -27,7 +27,7 @@ Once you have determined that you have an unreported problem, please use the fol
 
 - Overview of the Issue - Include any non-minified stack trace and other runtime errors that are available and relevant to the issue.
 - Use Case - Explain why this is a bug for you
-- Angular 2 and `ng2-keepalive` version(s) - Is this an issue with Angular 2, or a regression bug in this module?
+- Angular 2, `ng2-idle`, and `ng2-idle-keepalive` version(s) - Is this an issue with Angular 2, or a regression bug in this module?
 - Reproduce the Error - Please, please, please **provide a working example** either by including a Plunker or JSFiddle, or an unambiguous set of steps! Doing the footwork up front will allow me to replicate and fix the problem faster.
 - Related Issues - Please note any related issues, if any.
 - Suggest a Fix - If you have an idea of what's causing the problem (line of code or a commit), please point it out.
@@ -106,7 +106,7 @@ Please follow these steps to submit a pull request:
 * Run `gulp test`. Ensure all tests pass.
 * Run `gulp build` and correct any linting warnings or errors. You can use `gulp clang:format` to automatically fix most style errors.
 * Commit using the [Git Commit Guidelines](#committing).
-* Submit a pull request to `ng2-keepalive:master`.
+* Submit a pull request to `ng2-idle-keepalive:master`.
 * I will review your PR, and may suggest changes. If changes are suggested:
   * Make the requested changes.
   * Rerun the test task and correct any issues.
@@ -128,10 +128,10 @@ If your pull request is too out of date (resulting in merge conflicts or your ch
 
 
 [angularhelp]: https://github.com/angular/angular/blob/master/CONTRIBUTING.md#question
-[gitter]: https://gitter.im/HackedByChinese/ng2-keepalive
-[stackoverflow]: http://stackoverflow.com/questions/tagged/ng2-keepalive
-[github]: https://github.com/HackedByChinese/ng2-keepalive
-[githubissues]: https://github.com/HackedByChinese/ng2-keepalive/issues
+[gitter]: https://gitter.im/HackedByChinese/ng2-idle-keepalive
+[stackoverflow]: http://stackoverflow.com/questions/tagged/ng2-idle-keepalive
+[github]: https://github.com/HackedByChinese/ng2-idle-keepalive
+[githubissues]: https://github.com/HackedByChinese/ng2-idle-keepalive/issues
 [commitizen]: https://github.com/commitizen/cz-cli
-[githubprs]: https://github.com/HackedByChinese/ng2-keepalive/pulls
-[githubrepo]: https://github.com/HackedByChinese/ng2-keepalive.git
+[githubprs]: https://github.com/HackedByChinese/ng2-idle-keepalive/pulls
+[githubrepo]: https://github.com/HackedByChinese/ng2-idle-keepalive.git
