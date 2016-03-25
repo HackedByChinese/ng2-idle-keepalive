@@ -5,8 +5,7 @@ const Server = require('karma').Server;
 gulp.task('karma:start', function(done) {
   new Server({
     configFile: config.PATHS.root + '/karma.conf.js',
-    singleRun: true,
-    browsers: ['Chrome']
+    singleRun: true
   }, function() {
     done();
   }).start();
