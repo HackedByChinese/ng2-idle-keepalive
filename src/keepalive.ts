@@ -32,7 +32,7 @@ export class Keepalive extends KeepaliveSvc implements OnDestroy {
    * @param url - The URL or Request object to use when pinging.
    * @return The current Request used when pinging.
    */
-  request(url?: string | Request): Request {
+  request(url?: string|Request): Request {
     if (typeof url === 'string') {
       this.pingRequest = new Request({method: RequestMethod.Get, url: url});
     } else if (url instanceof Request) {

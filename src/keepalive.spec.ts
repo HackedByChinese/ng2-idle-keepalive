@@ -1,23 +1,6 @@
-import {
-  afterEach,
-  it,
-  inject,
-  injectAsync,
-  fakeAsync,
-  beforeEach,
-  beforeEachProviders,
-  tick
-} from 'angular2/testing';
+import {afterEach, it, inject, injectAsync, fakeAsync, beforeEach, beforeEachProviders, tick} from 'angular2/testing';
 import {provide} from 'angular2/core';
-import {
-  BaseRequestOptions,
-  Http,
-  HTTP_PROVIDERS,
-  Request,
-  RequestMethod,
-  ResponseOptions,
-  Response
-} from 'angular2/http';
+import {BaseRequestOptions, Http, HTTP_PROVIDERS, Request, RequestMethod, ResponseOptions, Response} from 'angular2/http';
 import {MockBackend} from 'angular2/http/testing';
 
 import {Keepalive} from './keepalive';
