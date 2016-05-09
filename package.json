@@ -1,6 +1,6 @@
 {
   "name": "ng2-idle-keepalive",
-  "version": "1.0.0-alpha.4",
+  "version": "1.0.0-alpha.5",
   "description": "A plugin for ng2-idle to keep user sessions alive while active.",
   "main": "index.js",
   "scripts": {

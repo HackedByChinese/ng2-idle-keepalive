@@ -1,3 +1,14 @@
+<a name="1.0.0-alpha.5"></a>
+# [1.0.0-alpha.5](https://github.com/HackedByChinese/ng2-idle-keepalive/compare/v1.0.0-alpha.4...v1.0.0-alpha.5) (2016-05-09)
+
+### Chores
+deps: use angular2 rc.1 and ng2-idle alpha.11
+
+### BREAKING CHANGES
+This release targets Angular2 RC.1. Angular2 RC.0 introduced breaking changes to how Angular is
+packaged. You will need to upgrade your application to RC.0 or later for this version of ng2-idle to
+work.
+
 <a name="1.0.0-alpha.4"></a>
 # [1.0.0-alpha.4](https://github.com/HackedByChinese/ng2-idle-keepalive/compare/1.0.0-alpha.3...v1.0.0-alpha.4) (2016-03-25)
 
