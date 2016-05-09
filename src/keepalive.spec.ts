@@ -1,7 +1,8 @@
-import {afterEach, it, inject, injectAsync, fakeAsync, beforeEach, beforeEachProviders, tick} from 'angular2/testing';
-import {provide} from 'angular2/core';
-import {BaseRequestOptions, Http, HTTP_PROVIDERS, Request, RequestMethod, ResponseOptions, Response} from 'angular2/http';
-import {MockBackend} from 'angular2/http/testing';
+// clang-format off
+import {afterEach, it, inject, async, fakeAsync, beforeEach, beforeEachProviders, tick} from '@angular/core/testing';
+import {provide} from '@angular/core';
+import {BaseRequestOptions, Http, HTTP_PROVIDERS, Request, RequestMethod, ResponseOptions, Response} from '@angular/http';
+import {MockBackend} from '@angular/http/testing';
 
 import {Keepalive} from './keepalive';
 
@@ -80,13 +81,12 @@ export function main() {
     describe('without using HTTP request', () => {
       beforeEach(() => { instance.request(null); });
 
-      it('ping() should emit onPing event', injectAsync([], () => {
-           return new Promise((pass, fail) => {
-             instance.onPing.subscribe(() => { pass(); });
+      it('ping() should emit onPing event', () => {
+        spyOn(instance.onPing, 'emit').and.callThrough();
 
-             instance.ping();
-           });
-         }), 300);
+        instance.ping();
+        expect(instance.onPing.emit).toHaveBeenCalled();
+      });
     });
 
     describe('using an HTTP request', () => {
@@ -106,22 +106,19 @@ export function main() {
         backend.verifyNoPendingRequests();
       });
 
-      it('ping() should fire request and emit onPingResponse event', injectAsync([], () => {
-           return new Promise((pass, fail) => {
-             backend.connections.subscribe(connection => {
-               expect(connection.request.url).toBe(request.url);
+      it('ping() should fire request and emit onPingResponse event', async(() => {
+        backend.connections.subscribe(connection => {
+            expect(connection.request.url).toBe(request.url);
 
-               connection.mockRespond(new ResponseOptions({status: 200}));
-             });
+            connection.mockRespond(new ResponseOptions({status: 200}));
+          });
 
-             instance.onPingResponse.subscribe((response: Response) => {
-               expect(response.status).toBe(200);
-               pass();
-             });
+        instance.onPingResponse.subscribe((response: Response) => {
+            expect(response.status).toBe(200);
+          });
 
-             instance.ping();
-           });
-         }), 300);
+        instance.ping();
+      }));
     });
 
     describe('on an interval', () => {
@@ -189,3 +186,4 @@ export function main() {
     });
   });
 }
+  // clang-format on

@@ -1,5 +1,5 @@
-import {Injectable, EventEmitter, OnDestroy} from 'angular2/core';
-import {Http, Request, RequestMethod, Response} from 'angular2/http';
+import {Injectable, EventEmitter, OnDestroy} from '@angular/core';
+import {Http, Request, RequestMethod, Response} from '@angular/http';
 import {KeepaliveSvc} from 'ng2-idle/core';
 
 /**

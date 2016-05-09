@@ -1,5 +1,5 @@
-import {it, inject, beforeEachProviders} from 'angular2/testing';
-import {HTTP_PROVIDERS} from 'angular2/http';
+import {it, inject, beforeEachProviders} from '@angular/core/testing';
+import {HTTP_PROVIDERS} from '@angular/http';
 
 import {Idle, IDLE_PROVIDERS, KeepaliveSvc} from 'ng2-idle/core';
 import {KEEPALIVE_PROVIDERS, Keepalive} from './core';
