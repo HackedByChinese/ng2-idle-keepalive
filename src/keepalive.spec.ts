@@ -1,7 +1,7 @@
 // clang-format off
-import {afterEach, it, inject, async, fakeAsync, beforeEach, beforeEachProviders, tick} from '@angular/core/testing';
 import {provide} from '@angular/core';
-import {BaseRequestOptions, Http, HTTP_PROVIDERS, Request, RequestMethod, ResponseOptions, Response} from '@angular/http';
+import {afterEach, async, beforeEach, beforeEachProviders, fakeAsync, inject, it, tick} from '@angular/core/testing';
+import {BaseRequestOptions, HTTP_PROVIDERS, Http, Request, RequestMethod, Response, ResponseOptions} from '@angular/http';
 import {MockBackend} from '@angular/http/testing';
 
 import {Keepalive} from './keepalive';
@@ -186,4 +186,4 @@ export function main() {
     });
   });
 }
-  // clang-format on
+// clang-format on
