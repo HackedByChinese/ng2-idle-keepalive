@@ -6,8 +6,7 @@ const Builder = require('systemjs-builder');
 var bundleConfig = {
   defaultJSExtensions: true,
   paths: {
-    '@angular/core': 'node_modules/@angular/core/index.js',
-    '@angular/http': 'node_modules/@angular/http/index.js',
+    '@angular/*': 'node_modules/@angular/*/index.js',
     'rxjs/*': 'node_modules/rxjs/*',
     'ng2-idle/core': 'node_modules/ng2-idle/core.js'
   }
@@ -25,7 +24,7 @@ function bundle(moduleName, moduleBundleName, minify, done) {
   const outputFile = path.join(config.PATHS.dist.bundles,
       moduleBundleName + (minify ? '.min' : '') + '.js');
   const bundlePromise = builder.bundle(moduleName +
-      ' - @angular/core - @angular/http - rxjs/* - ng2-idle/core',
+      ' - @angular/* - rxjs/* - ng2-idle/core',
         outputFile, outputConfig)
       .then(function() {
         done();
