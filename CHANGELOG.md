@@ -1,3 +1,15 @@
+<a name="1.0.0-alpha.6"></a>
+# [1.0.0-alpha.6](https://github.com/HackedByChinese/ng2-idle-keepalive/compare/v1.0.0-alpha.5...v1.0.0-alpha.6) (2016-06-22)
+
+### Chores
+deps: use angular2 rc.3 and ng2-idle alpha.12
+
+### Bug Fixes
+
+* **bundle:** fix CJS bundling error ([620acd2](https://github.com/HackedByChinese/ng2-idle-keepalive/commit/620acd2))
+
+
+
 <a name="1.0.0-alpha.5"></a>
 # [1.0.0-alpha.5](https://github.com/HackedByChinese/ng2-idle-keepalive/compare/v1.0.0-alpha.4...v1.0.0-alpha.5) (2016-05-09)
 
