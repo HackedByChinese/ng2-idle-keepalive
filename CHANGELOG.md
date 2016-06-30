@@ -1,8 +1,17 @@
+<a name="1.0.0-alpha.7"></a>
+# [1.0.0-alpha.7](https://github.com/HackedByChinese/ng2-idle-keepalive/compare/v1.0.0-alpha.6...v1.0.0-alpha.7) (2016-06-30)
+
+
+### Chores
+* **deps**: update to angular 2.0.0-rc.4 and ng2-idle 1.0.0-alpha.13
+
+
+
 <a name="1.0.0-alpha.6"></a>
 # [1.0.0-alpha.6](https://github.com/HackedByChinese/ng2-idle-keepalive/compare/v1.0.0-alpha.5...v1.0.0-alpha.6) (2016-06-22)
 
 ### Chores
-deps: use angular2 rc.3 and ng2-idle alpha.12
+* **deps**: use angular2 rc.3 and ng2-idle alpha.12
 
 ### Bug Fixes
 
@@ -14,7 +23,7 @@ deps: use angular2 rc.3 and ng2-idle alpha.12
 # [1.0.0-alpha.5](https://github.com/HackedByChinese/ng2-idle-keepalive/compare/v1.0.0-alpha.4...v1.0.0-alpha.5) (2016-05-09)
 
 ### Chores
-deps: use angular2 rc.1 and ng2-idle alpha.11
+* **deps**: use angular2 rc.1 and ng2-idle alpha.11
 
 ### BREAKING CHANGES
 This release targets Angular2 RC.1. Angular2 RC.0 introduced breaking changes to how Angular is
