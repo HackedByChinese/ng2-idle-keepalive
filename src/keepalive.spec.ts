@@ -1,6 +1,6 @@
 // clang-format off
 import {provide} from '@angular/core';
-import {afterEach, async, beforeEach, beforeEachProviders, fakeAsync, inject, it, tick} from '@angular/core/testing';
+import {addProviders, afterEach, async, beforeEach, fakeAsync, inject, it, tick} from '@angular/core/testing';
 import {BaseRequestOptions, HTTP_PROVIDERS, Http, Request, RequestMethod, Response, ResponseOptions} from '@angular/http';
 import {MockBackend} from '@angular/http/testing';
 
@@ -9,12 +9,14 @@ import {Keepalive} from './keepalive';
 export function main() {
   describe('Keepalive', () => {
 
-    beforeEachProviders(
-        () => [BaseRequestOptions, HTTP_PROVIDERS, MockBackend, Keepalive, provide(Http, {
+    beforeEach(
+        () => {
+          addProviders([BaseRequestOptions, HTTP_PROVIDERS, MockBackend, Keepalive, provide(Http, {
                  deps: [MockBackend, BaseRequestOptions],
                  useFactory:
                      (backend, defaultOptions) => { return new Http(backend, defaultOptions); }
                })]);
+             });
 
     let instance: Keepalive;
 
