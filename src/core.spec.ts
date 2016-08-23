@@ -1,8 +1,8 @@
 import {addProviders, inject} from '@angular/core/testing';
 import {HTTP_PROVIDERS} from '@angular/http';
-import {IDLE_PROVIDERS, Idle, KeepaliveSvc} from 'ng2-idle/core';
+import {Idle, IDLE_PROVIDERS, KeepaliveSvc} from 'ng2-idle/core';
 
-import {KEEPALIVE_PROVIDERS, Keepalive} from './core';
+import {Keepalive, KEEPALIVE_PROVIDERS} from './core';
 
 export function main() {
   describe('core', () => {
