@@ -1,3 +1,12 @@
+<a name="1.0.0-alpha.8"></a>
+# [1.0.0-alpha.8](https://github.com/HackedByChinese/ng2-idle-keepalive/compare/v1.0.0-alpha.7...v1.0.0-alpha.8) (2016-08-23)
+
+
+### Chores
+
+* **deps**: update to angular 2.0.0-rc.5 and ng2-idle 1.0.0-alpha.15
+
+
 <a name="1.0.0-alpha.7"></a>
 # [1.0.0-alpha.7](https://github.com/HackedByChinese/ng2-idle-keepalive/compare/v1.0.0-alpha.6...v1.0.0-alpha.7) (2016-06-30)
 

@@ -1,7 +1,7 @@
 // clang-format off
 import {provide} from '@angular/core';
-import {addProviders, afterEach, async, beforeEach, fakeAsync, inject, it, tick} from '@angular/core/testing';
-import {BaseRequestOptions, HTTP_PROVIDERS, Http, Request, RequestMethod, Response, ResponseOptions} from '@angular/http';
+import {addProviders, async, fakeAsync, inject, tick} from '@angular/core/testing';
+import {BaseRequestOptions, Http, HTTP_PROVIDERS, Request, RequestMethod, Response, ResponseOptions} from '@angular/http';
 import {MockBackend} from '@angular/http/testing';
 
 import {Keepalive} from './keepalive';
