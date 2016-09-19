@@ -1,3 +1,11 @@
+<a name="1.0.0-alpha.9"></a>
+# [1.0.0-alpha.9](https://github.com/HackedByChinese/ng2-idle-keepalive/compare/v1.0.0-alpha.8...v1.0.0-alpha.9) (2016-09-19)
+
+### Chores
+
+* **deps**: update to angular@2.0.0 and ng2-idle@1.0.0-alpha.16
+
+
 <a name="1.0.0-alpha.8"></a>
 # [1.0.0-alpha.8](https://github.com/HackedByChinese/ng2-idle-keepalive/compare/v1.0.0-alpha.7...v1.0.0-alpha.8) (2016-08-23)
 
