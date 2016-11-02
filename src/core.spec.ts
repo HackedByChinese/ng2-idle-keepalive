@@ -12,7 +12,9 @@ export function main() {
     });
 
     it('KEEPALIVE_PROVIDERS should register Idle-compatible KeepaliveSvc provider',
-       inject([Idle], (idle: Idle) => { expect(idle.getKeepaliveEnabled()).toBe(true); }));
+       inject([Idle], (idle: Idle) => {
+         expect(idle.getKeepaliveEnabled()).toBe(true);
+       }));
 
     it('KEEPALIVE_PROVIDERS should register the same instance for Keepalive and KeepaliveSvc',
        inject([Keepalive, KeepaliveSvc], (k1: Keepalive, k2: KeepaliveSvc) => {

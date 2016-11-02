@@ -26,7 +26,9 @@ export class Keepalive extends KeepaliveSvc implements OnDestroy {
    * Initializes a new instance of Keepalive
    * @param http - The HTTP service.
    */
-  constructor(private http: Http) { super(); }
+  constructor(private http: Http) {
+    super();
+  }
 
   /*
    * Sets the string or Request that should be used when pinging.
@@ -80,7 +82,9 @@ export class Keepalive extends KeepaliveSvc implements OnDestroy {
   start(): void {
     this.stop();
 
-    this.pingHandle = setInterval(() => { this.ping(); }, this.pingInterval * 1000);
+    this.pingHandle = setInterval(() => {
+      this.ping();
+    }, this.pingInterval * 1000);
   }
 
   /*
@@ -96,11 +100,15 @@ export class Keepalive extends KeepaliveSvc implements OnDestroy {
   /*
    * Performs any cleanup tasks when Angular destroys the instance.
    */
-  ngOnDestroy(): void { this.stop(); }
+  ngOnDestroy(): void {
+    this.stop();
+  }
 
   /*
    * Returns whether or not the service will ping automatically at the specified interval.
    * @return True if the service will ping at the specified interval; otherwise, false.
    */
-  isRunning(): boolean { return !!this.pingHandle; }
+  isRunning(): boolean {
+    return !!this.pingHandle;
+  }
 }
